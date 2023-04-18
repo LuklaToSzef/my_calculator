@@ -6,7 +6,6 @@ void main() {
 
 class Calculator extends StatelessWidget {
   const Calculator({super.key});
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -16,19 +15,17 @@ class Calculator extends StatelessWidget {
           style: OutlinedButton.styleFrom(
             foregroundColor: Colors.white,
             backgroundColor: Colors.black,
-            padding: EdgeInsets.all(5),
-              minimumSize: const Size(95, 95),
-             maximumSize: const Size(95, 95),
-            side: const BorderSide(color: Colors.white, width: 1.5),
+            minimumSize: const Size(90, 90),
+            maximumSize: const Size(90, 90),
+              side: const BorderSide(color: Colors.blueGrey, width: 1.5),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(360),
             ),
           ),
-
         ),
-
         primarySwatch: Colors.grey,
       ),
+
       home: const MyHomePage(title: 'Calculator'),
     );
   }
@@ -46,6 +43,9 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  void calc(){
+
+  }
   @override
   Widget build(BuildContext context) {
 
@@ -79,56 +79,53 @@ backgroundColor: Colors.blueGrey,
 
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: const <Widget>[
+              children: <Widget>[
 
                 //button C ÷ × =
-                OutlinedButton(onPressed: null, child:Text("C",style: TextStyle(fontSize: 40, color: Colors.redAccent))),
-                OutlinedButton(onPressed: null, child: Text("÷",style: TextStyle(fontSize: 40, color: Colors.white))),
-                OutlinedButton(onPressed: null, child: Text("×",style: TextStyle(fontSize: 40, color: Colors.white))),
-                OutlinedButton(onPressed: null, child:  Text("=",style: TextStyle(fontSize: 40, color: Colors.greenAccent)))
+                OutlinedButton(onPressed: calc, child:const Text("C",style: TextStyle(fontSize: 40, color: Colors.redAccent))),
+                OutlinedButton(onPressed: calc, child: const Text("÷",style: TextStyle(fontSize: 40, color: Colors.white))),
+                OutlinedButton(onPressed: calc, child: const Text("×",style: TextStyle(fontSize: 40, color: Colors.white))),
+                OutlinedButton(onPressed: calc, child:  const Text("=",style: TextStyle(fontSize: 40, color: Colors.greenAccent)))
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: const <Widget>[
+              children:  <Widget>[
                 //button 7 8 9 -
-                OutlinedButton(onPressed: null, child:Text("7",style: TextStyle(fontSize: 40, color: Colors.white))),
-                OutlinedButton(onPressed: null, child: Text("8",style: TextStyle(fontSize: 40, color: Colors.white))),
-                OutlinedButton(onPressed: null, child: Text("9",style: TextStyle(fontSize: 40, color: Colors.white))),
-                OutlinedButton(onPressed: null, child:  Text("-",style: TextStyle(fontSize: 40, color: Colors.white))),
+                OutlinedButton(onPressed: calc, child: const Text("7",style: TextStyle(fontSize: 40, color: Colors.white))),
+                OutlinedButton(onPressed: calc, child: const Text("8",style: TextStyle(fontSize: 40, color: Colors.white))),
+                OutlinedButton(onPressed: calc, child: const Text("9",style: TextStyle(fontSize: 40, color: Colors.white))),
+                OutlinedButton(onPressed: calc, child:  const Text("-",style: TextStyle(fontSize: 40, color: Colors.white))),
 
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: const <Widget>[
+              children: <Widget>[
                 //button 4 5 6 +
-                OutlinedButton(onPressed: null, child:Text("4",style: TextStyle(fontSize: 40, color: Colors.white))),
-                OutlinedButton(onPressed: null, child: Text("5",style: TextStyle(fontSize: 40, color: Colors.white))),
-                OutlinedButton(onPressed: null, child: Text("6",style: TextStyle(fontSize: 40, color: Colors.white))),
-                OutlinedButton(onPressed: null, child:  Text("+",style: TextStyle(fontSize: 40, color: Colors.white)))
+                OutlinedButton(onPressed: calc, child: const Text("4",style: TextStyle(fontSize: 40, color: Colors.white))),
+                OutlinedButton(onPressed: calc, child: const Text("5",style: TextStyle(fontSize: 40, color: Colors.white))),
+                OutlinedButton(onPressed: calc, child: const Text("6",style: TextStyle(fontSize: 40, color: Colors.white))),
+                OutlinedButton(onPressed: calc, child: const Text("+",style: TextStyle(fontSize: 40, color: Colors.white)))
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: const <Widget>[
+              children: <Widget>[
                 //button 1 2 3 ,
-                OutlinedButton(onPressed: null, child:Text("1",style: TextStyle(fontSize: 40, color: Colors.white))),
-                OutlinedButton(onPressed: null, child: Text("2",style: TextStyle(fontSize: 40, color: Colors.white))),
-                OutlinedButton(onPressed: null, child: Text("3",style: TextStyle(fontSize: 40, color: Colors.white))),
-                OutlinedButton(style: ButtonStyle(),onPressed: null, child:  Text(",",style: TextStyle(fontSize: 40, color: Colors.white))),
+                OutlinedButton(onPressed: calc, child: const Text("1",style: TextStyle(fontSize: 40, color: Colors.white))),
+                OutlinedButton(onPressed: calc, child: const Text("2",style: TextStyle(fontSize: 40, color: Colors.white))),
+                OutlinedButton(onPressed: calc, child: const Text("3",style: TextStyle(fontSize: 40, color: Colors.white))),
+                OutlinedButton(onPressed: calc, child: const Text(",",style: TextStyle(fontSize: 40, color: Colors.white))),
 
 
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: const <Widget>[
+              children:  <Widget>[
                 //button 0 (in the center)
-
-                OutlinedButton(
-                  onPressed: null,
-                  child:Text("0",style: TextStyle(fontSize: 40, color: Colors.white)),),
+                OutlinedButton(onPressed: calc, child: const Text("0",style: TextStyle(fontSize: 40, color: Colors.white)),),
 
               ],
             ),
