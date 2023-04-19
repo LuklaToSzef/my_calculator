@@ -58,11 +58,18 @@ class _MyHomePageState extends State<MyHomePage> {
         num2 = 0.0;
         numbers ="";
         operand = "";
-      } else if (buttonText == "+" || buttonText == "-" || buttonText == "×" || buttonText == "÷") {
+      }
+      else if (buttonText == "-" && result == "0") {
+        result = "";
+        numbers += buttonText;
+        result = ("-$result");
+      }
+      else if (buttonText == "+" || buttonText == "-" || buttonText == "×" || buttonText == "÷") {
         num1 = double.parse(result);
         operand = buttonText;
         numbers += buttonText;
         result = "0";
+
       } else if (buttonText == ",") {
         if (!result.contains(",")) {
           result += ".";
@@ -98,14 +105,6 @@ class _MyHomePageState extends State<MyHomePage> {
             result = (num1 * num2).toString();
           }
         }
-        //if (operand == "÷") {
-          //if (num2==0){
-           // result = "You can't divide by 0";
-         // }
-          //else {
-           // result = (num1 / num2).toString();
-          //}
-       // }
       if (operand == "÷") {
         if (num2 == 0) {
           result = "You can't divide by 0";
